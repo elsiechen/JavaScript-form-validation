@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  fluid typography using clamp() without using media queries */
+/*  clamp (minimum value, preferred value, maximum value)*/
+:root {
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    font-family: sans-serif;
+
+     /*  custom property */
+     --main-color: rgb(14, 158, 229);
+     --second-color: rgb(103,71,54);
+     --third-color: rgb(243,244,246);
+     --fourth-color:rgb(146,145,145);
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem;
+    box-shadow: 2px 3px 5px silver; 
+    margin: 2rem auto;
+    width: 500px;
+}
+
+.form-container p{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.1rem;
+    color: var(--fourth-color);
+}
+
+.form-control {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5vh;
+    width: 500px;
+}
+
+input[type='text'], 
+input[type='email'],
+input[type='tel'],
+input[type='password'] {
+    width: 100%;
+    border: 1px solid #dddcdc;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    height: 1.3rem;
+    padding: 0.3rem 0.5rem;
+}
+
+/* use ':has' pseudo-class to change label color when input:focus */
+.form-control>div:has(input:focus) label,
+div.terms:has(input:focus) label{
+    color: black;
+}
+
+input:focus {
+    box-shadow: 2px 2px 3px silver;
+}
+
+
+label[for='terms'] {
+    display: inline;
+}
+
+.sign-up-btn {
+    background-color: var(--second-color);
+    color: var(--third-color);
+    padding: 0.7rem 2.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    box-shadow: 2px 2px 3px silver;
+    margin: 1rem 0 2rem 0;
+}
+
+.sign-up-btn:hover {
+    cursor: pointer;
+    background-color: var(--third-color);
+    color: var(--second-color);
+    border: 0.1px transparent var(--second-color);
+}
+
+/* prefixed for browser compatibility */
+/* Standard */
+::placeholder {
+    color: var(--fourth-color);
+}
+  
+/* Firefox */
+::-moz-placeholder {
+    color: var(--fourth-color);
+}
+  
+/* WebKit-based */
+::-webkit-input-placeholder {
+    color: var(--fourth-color);
+}
+  
+/* Internet Explorer */
+:-ms-input-placeholder {
+    color: var(--fourth-color);
+}
+
+
+/* input:invalid {
+    border: 2px solid red;
+} */
+
+.error {
+    font-size: 0.5rem;
+    color: red;
+    margin-top: 3px;
+}
