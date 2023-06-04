@@ -11,27 +11,17 @@
 <body>
     <div class="form-container">
         <p>Let's do this!</p>
-        <form action="" method="">
+        <form novalidate>
             <div class="form-control">
                 <div>
                     <label for="first-name">FIRST NAME *</label>
                     <input type="text" name="first-name" id="first-name" required placeholder="Jack"
-                        minlength="2" maxlength="20">
+                        minlength="2" maxlength="30">
                 </div>
                 <div>
                     <label for="last-name">LAST NAME *</label>
                     <input type="text" name="last-name" id="last-name" required 
-                        placeholder="Ryan" minlength="2" maxlength="20">
-                </div>
-                <div>
-                    <label for="email">EMAIL *</label>
-                    <input type="email" name="email" id="email" required 
-                        placeholder="example@gmail.com">
-                </div>
-                <div>
-                    <label for="phone">PHONE NUMBER</label>
-                    <input type="tel" name="phone" id="phone" placeholder="860 123 1234" 
-                        pattern="\d{10}" title="Provide telephone number in this format: 860 123 1234 ">
+                        placeholder="Ryan" minlength="2" maxlength="30">
                 </div>
                 <div>
                     <label for="zip">ZIP CODE *</label>
@@ -57,6 +47,11 @@
                     <input type="password" name="confirm" id="confirm" required
                         minlength="8" maxlength="20">
                     <div class="error" id="confirm-error"></div>
+                </div>
+                <div>
+                    <label for="email">EMAIL *</label>
+                    <input type="email" name="email" id="email" required 
+                        placeholder="example@gmail.com">
                 </div>
             </div>
             <div>
