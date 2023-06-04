@@ -71,7 +71,7 @@ label[for='terms'] {
     display: inline;
 }
 
-.sign-up-btn {
+.submit-btn {
     background-color: var(--second-color);
     color: var(--third-color);
     padding: 0.7rem 2.5rem;
@@ -80,9 +80,10 @@ label[for='terms'] {
     font-weight: bolder;
     box-shadow: 2px 2px 3px silver;
     margin: 1rem 0 2rem 0;
+    width: 100%;
 }
 
-.sign-up-btn:hover {
+.submit-btn:hover {
     cursor: pointer;
     background-color: var(--third-color);
     color: var(--second-color);
