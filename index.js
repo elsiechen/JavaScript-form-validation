@@ -4,13 +4,13 @@ const zip = document.querySelector('#zip');
 const country = document.querySelector('#country')
 const pwd = document.querySelector('#pwd');
 const pwdConfirm = document.querySelector('#confirm');
+const email = document.querySelector('#email');
 const submitBtn = document.querySelector('#submit-btn');
 
 const checkName = (name) => {
     if (name.validity.tooShort || name.validity.tooLong) {
         name.setCustomValidity('Please enter a name between 2 to 10 characters.');
         name.reportValidity();
-        console.log('check name ...')
     } else if (name.validity.valueMissing) {
         name.setCustomValidity('Please enter a name.');
         name.reportValidity();
@@ -85,6 +85,16 @@ const checkConfirm = () => {
     
 };
 
+const checkEmail = () => {
+    if (email.validity.typeMismatch) {
+        email.setCustomValidity('Please enter an email address. e.g: example@mail.com');
+        email.reportValidity();
+    } else if (email.validity.valueMissing) {
+        email.setCustomValidity('Please enter an email address.');
+        email.reportValidity();
+    }
+};
+
 const events = () => {
     firstName.addEventListener('input', () => {
         checkName(firstName);
@@ -96,6 +106,7 @@ const events = () => {
     country.addEventListener('change', checkZIP);
     pwd.addEventListener('input', checkPwd);
     pwdConfirm.addEventListener('input', checkConfirm);
+    email.addEventListener('input', checkEmail);
 };
 
 events();
