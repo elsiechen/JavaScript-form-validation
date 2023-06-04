@@ -92,6 +92,8 @@ const checkEmail = () => {
     } else if (email.validity.valueMissing) {
         email.setCustomValidity('Please enter an email address.');
         email.reportValidity();
+    } else {
+        email.setCustomValidity('');
     }
 };
 
