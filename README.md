@@ -12,7 +12,7 @@ This project focuses on performing form validation on the frontend with JavaScri
 
 ## Demo
 
-Check out the [**live**](https://elsiechen.github.io/JavaScript-form-validation /) demo.
+Check out the [**live**](https://elsiechen.github.io/JavaScript-form-validation/) demo.
 
 ## Technologies Used
 
