@@ -97,6 +97,33 @@ const checkEmail = () => {
     }
 };
 
+const checkSubmit = () => {
+    const form = document.querySelector('form');
+    const inputs = document.querySelectorAll('input');
+    let valid = 0;
+
+    // Remove child
+    form.removeChild(form.lastChild);
+
+    inputs.forEach(input => {
+        if (input.validity.valid) {
+            valid++;
+        };
+    });
+
+    if (valid === inputs.length) {
+        const msg = document.createElement('div');
+        msg.innerHTML = 'Hooray! All inputs are valid.';
+        msg.style.color = 'rgb(71, 169, 146)';
+        form.appendChild(msg);
+    } else {
+        const msg = document.createElement('div');
+        msg.innerHTML = 'Oops! Some fields are invalid.';
+        msg.style.color = 'red';
+        form.appendChild(msg);
+    }
+};
+
 const events = () => {
     firstName.addEventListener('input', () => {
         checkName(firstName);
@@ -109,6 +136,7 @@ const events = () => {
     pwd.addEventListener('input', checkPwd);
     pwdConfirm.addEventListener('input', checkConfirm);
     email.addEventListener('input', checkEmail);
+    submitBtn.addEventListener('click', checkSubmit);
 };
 
 events();
